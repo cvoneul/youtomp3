@@ -9,7 +9,7 @@ yt = YouTube( str(input("Enter the URL of the youtube video you want downloaded 
 
 video = yt.streams.filter(only_audio=True).first()
 
-destination =  "."
+destination =  "C:\\19095\\Downloads\\"
 
 out_file = video.download(output_path=destination)
 
