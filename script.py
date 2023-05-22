@@ -1,16 +1,20 @@
-from pytube import YouTube
-import os
+try:
 
-yt = YouTube( str(input("Enter the URL of the youtube video you want downloaded : \n")))
+    from pytube import YouTube
+    import os
 
-video = yt.streams.filter(only_audio=True).first()
+    yt = YouTube( str(input("Enter the URL of the youtube video you want downloaded : \n")))
 
-destination =  "."
+    video = yt.streams.filter(only_audio=True).first()
 
-out_file = video.download(output_path=destination)
+    destination =  "."
 
-base, ext = os.path.splitext(out_file)
-new_file = base + '.mp3'
-os.rename(out_file, new_file)
+    out_file = video.download(output_path=destination)
 
-print('Successfully downloaded')
+    base, ext = os.path.splitext(out_file)
+    new_file = base + '.mp3'
+    os.rename(out_file, new_file)
+
+    print('Successfully downloaded')
+except:
+    print("error")
