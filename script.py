@@ -1,8 +1,7 @@
 import os
-os.system("curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py")
-os.system("python get-pip.py")
-os.system("pip install pytube")
-
+os.system("pip unistall pytube")
+os.system("pip unistall pytube3")
+os.system("python -m pip install git+https://github.com/nficano/pytube")
 from pytube import YouTube
 
 yt = YouTube( str(input("Enter the URL of the youtube video you want downloaded : \n")))
